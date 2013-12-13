@@ -1,0 +1,148 @@
+{
+    "name": "fuel/fuel",
+    "type": "metapackage",
+    "description": "The FuelPHP framework",
+    "keywords": ["framework"],
+    "homepage": "http://fuelphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "FuelPHP Development Team",
+            "email": "team@fuelphp.com"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/fuelphp",
+        "forum": "http://fuelphp.com/forums"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "monolog/monolog": "1.5.*",
+        "fuelphp/upload": "2.0",
+        "fuel/core": "1.7" ,
+        "fuel/oil": "1.7",
+        "fuel/orm": "1.7",
+        "fuel/parser": "1.7",
+        "fuel/auth": "1.7",
+        "fuel/email": "1.7",
+        "emptyapp": "1.7"
+    },
+    "repositories": [ 
+        {
+            "type": "package", 
+            "package": { 
+                "name": "fuel/core", 
+                "type": "fuel-package", 
+                "version": "1.7", 
+                "require": { 
+                    "composer/installers": "*" 
+                },
+                "source": { 
+                    "url": "https://github.com/fuel/core.git", 
+                    "type": "git", 
+                    "reference": "1.7/master" 
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"fuel/oil",
+                "type":"fuel-package",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/fuel/oil.git",
+                    "reference":"1.7/master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"fuel/orm",
+                "type":"fuel-package",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/fuel/orm.git",
+                    "reference":"1.7/master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"fuel/parser",
+                "type":"fuel-package",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/fuel/parser.git",
+                    "reference":"1.7/master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"fuel/auth",
+                "type":"fuel-package",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/fuel/auth.git",
+                    "reference":"1.7/master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"fuel/email",
+                "type":"fuel-package",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/fuel/email.git",
+                    "reference":"1.7/master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package":{
+                "name":"emptyapp",
+                "type":"fuel-app",
+                "version":"1.7",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/goosys/Fuel-Vendor-Enptyapp.git",
+                    "reference":"1.7/master"
+                }
+            }
+        }
+    ],
+    "extra": { 
+        "installer-paths": { 
+            "fuel/core": ["fuel/core"] 
+        }
+    },
+    "suggest": {
+        "mustache/mustache": "Allow Mustache templating with the Parser package",
+        "smarty/smarty": "Allow Smarty templating with the Parser package",
+        "twig/twig": "Allow Twig templating with the Parser package",
+        "mthaml/mthaml": "Allow Haml templating with Twig supports with the Parser package"
+    },
+    "config": {
+        "vendor-dir": "fuel/vendor"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "oil r install" ,
+            "git init" ,
+            "bash fuel/vendor/emptyapp/copy.sh" 
+        ]
+    },
+    "minimum-stability": "dev"
+}
