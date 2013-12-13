@@ -1,5 +1,4 @@
 #FuelPHP Quick Installer
-====
 
 * Version: 1.0
 
@@ -15,6 +14,6 @@
 ### Result
 * Fuel/Core is installed
 * Some basic packages(auth,oil,orm,email,parser) is installed
-* Empty directories in fuel/app is created
+* [Empty directories](https://github.com/goosys/Fuel-Vendor-Enptyapp) in fuel/app is created
 * Git is initialized for your application
 * Let's start to build your application!
