@@ -6,8 +6,8 @@
 
 ### Usage
 
-* Create a project directory. (ex. /PROJECT)
-* Download composer.json in this directory
+* Create a project directory. (ex. mkdir /PROJECT)
+* Download [composer.json](https://raw.githubusercontent.com/goosys/Fuel-Installer/master/composer.json) in this directory
 * curl -s http://getcomposer.org/installer | php
 * php composer.phar install
 * wget https://raw.githubusercontent.com/fuel/fuel/352f83a9e23d02145c38a6f93c50b6fe08a02b07/oil -O oil --no-check-certificate
