@@ -139,9 +139,9 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "bash fuel/vendor/emptyapp/copy.sh",
             "oil r install" ,
-            "git init" ,
-            "bash fuel/vendor/emptyapp/copy.sh" 
+            "git init"
         ]
     },
     "minimum-stability": "dev"
